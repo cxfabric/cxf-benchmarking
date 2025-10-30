@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config1_5',
+    activeConfiguration: 'config_simple_1',
     configurations:
     {
         config1_0:
@@ -12,7 +12,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
@@ -30,7 +30,7 @@ const config =
                 ],
             POLICY: 'alternate',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
@@ -47,7 +47,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 250,
             REQUESTS_PER_BATCH: [20],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
@@ -77,7 +77,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
@@ -107,7 +107,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
@@ -132,6 +132,7 @@ const config =
                     'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true&displayExecutionLogs=false'
                 ],
             POLICY: 'alternate',
+            TIMEOUT: 180000,
             BEARER_TOKEN: '',
             INPUT_TEXT: 'I want to make an appointment',
             NUM_BATCHES: 193,
@@ -154,6 +155,37 @@ const config =
             },
             DEBUG: false
         },
+        config_simple_1:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=771ef3cb-0b71-4dda-91b2-5d18c49cb2ab&draft=true&displayExecutionLogs=false'
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT_TEXT: 'I want to make an appointment',
+            NUM_BATCHES: 100,
+            REQUESTS_PER_BATCH: [250],
+            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v20-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            DEBUG: true
+        },
         config_local_1:
         {
             name: 'iAnswer',
@@ -163,7 +195,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
@@ -193,7 +225,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 250,
             REQUESTS_PER_BATCH: [20],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
@@ -223,7 +255,7 @@ const config =
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
@@ -262,7 +294,7 @@ const config =
                 ],
             POLICY: 'alternate',
             BEARER_TOKEN: '',
-            INPUT_TEXT: 'I want to book a massage',
+            INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,

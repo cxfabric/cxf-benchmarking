@@ -3,7 +3,7 @@ import { Base64 } from 'js-base64';
 import { v4 as uuidv4 } from 'uuid';
 import config from './config.js';
 import fs from 'node:fs';
-import { setTimeout } from "timers/promises";
+import { setTimeout } from "node:timers/promises";
 import format from "date-format";
 
 const ALL_CONFIGS = config,
@@ -197,6 +197,7 @@ async function flowTester()
     const axiosClient = axios.create();
 
     let requestOptions,
+        requestTimeout,
         fileDescriptor,
         csvFileDescriptor,
         index,
@@ -229,6 +230,8 @@ async function flowTester()
             
         logStatement = `Load test starting at ${getCurrentTime()}`;
 
+        requestTimeout = Math.min(Math.max(0, activeConfig?.TIMEOUT ?? 60000), 600000);
+
         requestOptions = !activeConfig.hasOwnProperty('BEARER_TOKEN') || EMPTY.test(activeConfig.BEARER_TOKEN) ? 
         {
             headers: 
@@ -236,7 +239,7 @@ async function flowTester()
                 'Content-Type': 'application/json', 
                 'Accept': 'application/json' 
             },
-            timeout: 60000
+            timeout: requestTimeout
         }
         :
         {
@@ -246,7 +249,7 @@ async function flowTester()
                 'Accept': 'application/json',
                 'Authorization': activeConfig.BEARER_TOKEN
             },
-            timeout: 60000
+            timeout: requestTimeout
         };
 
         if (EMPTY.test(activeConfig.OUTPUT_FILE_NAME))
