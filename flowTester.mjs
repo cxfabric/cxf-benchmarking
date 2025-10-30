@@ -8,10 +8,12 @@ import format from "date-format";
 
 const ALL_CONFIGS = config,
     EMPTY = /^[\s'"]*$/,
-    VERBOSITY_LEVELS = new Set([ 'high', 'low', 'none' ]);
+    VERBOSITY_LEVELS = new Set([ 'high', 'low', 'none' ]),
+    DOT_OUTPUT_EVERY = 100;
 
 var activeConfig,
-    verbosity;
+    verbosity,
+    dotOutputs = 0;
 
 function getCurrentTime()
 {
@@ -30,6 +32,8 @@ function logEvent(logEntry, eventCategory, fileDescriptor, overrideVerbosity = f
             if (fileDescriptor)
                 fs.writeSync(fileDescriptor, `[INFO] ${logEntry}\n`);
         }
+        else if (dotOutputs++ % DOT_OUTPUT_EVERY === 0)
+            console.info('.');
     }
     else if (eventCategory === 'error')
     {
