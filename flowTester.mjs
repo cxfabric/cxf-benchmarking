@@ -7,24 +7,29 @@ import { setTimeout } from "node:timers/promises";
 import format from "date-format";
 
 const ALL_CONFIGS = config,
-    EMPTY = /^[\s'"]*$/;
+    EMPTY = /^[\s'"]*$/,
+    VERBOSITY_LEVELS = new Set([ 'high', 'low', 'none' ]);
 
-var activeConfig;
+var activeConfig,
+    verbosity;
 
 function getCurrentTime()
 {
     return format.asString().replace('T', ' ');
 }
 
-function logEvent(logEntry, eventCategory, fileDescriptor)
+function logEvent(logEntry, eventCategory, fileDescriptor, overrideVerbosity = false)
 {
     let timestamp;
 
     if (eventCategory === 'info')
     {
-        console.info(`\x1b[32m[INFO]\x1b[0m ${logEntry}`);
-        if (fileDescriptor)
-            fs.writeSync(fileDescriptor, `[INFO] ${logEntry}\n`);
+        if (overrideVerbosity || verbosity !== 'none')
+        {
+            console.info(`\x1b[32m[INFO]\x1b[0m ${logEntry}`);
+            if (fileDescriptor)
+                fs.writeSync(fileDescriptor, `[INFO] ${logEntry}\n`);
+        }
     }
     else if (eventCategory === 'error')
     {
@@ -55,12 +60,13 @@ function processResponse(response, flowUrl, fileDescriptor)
 {
     if (response.status === 200)
     {
-        if (activeConfig.DEBUG)
+        if (verbosity === 'high')
             logEvent(`  Response = ${JSON.stringify(response.data)} for flow ${flowUrl}`, 'info', fileDescriptor);
         if (response.data.success)
-            if (response.data.hasOwnProperty('message') && response.data.message.length > 0)
+            if (response.data?.message?.length > 0)
             {
-                logEvent(`  Flow invocation and execution successful for flow ${flowUrl}`, 'info', fileDescriptor);
+                if (verbosity !== 'none')
+                    logEvent(`  Flow invocation and execution successful for flow ${flowUrl}`, 'info', fileDescriptor);
                 return 2;
             }
             else
@@ -78,7 +84,7 @@ function processResponse(response, flowUrl, fileDescriptor)
     return 0;
 }
 
-async function sendToEsa(esaUrl, analysisId, entityId, event, userName, password, debug, showResponse, fileDescriptor) 
+async function sendToEsa(esaUrl, analysisId, entityId, event, userName, password, showResponse, fileDescriptor) 
 {
     const requestOptions = 
     {
@@ -92,23 +98,19 @@ async function sendToEsa(esaUrl, analysisId, entityId, event, userName, password
         esaUrl = esaUrl + '/';
     esaUrl = `${esaUrl}eventAnalysis?analysisPipelines=${encodeURIComponent(entityId + ',' + analysisId)}`;
 
-    if (debug)
-        console.info(`FlowStats connector configuration: target URL = ${esaUrl}, request configuration = ${JSON.stringify(requestOptions)}, request body = ${JSON.stringify(event)}`);
+    if (verbosity === 'high')
+        logEvent(`FlowStats connector configuration: target URL = ${esaUrl}, request configuration = ${JSON.stringify(requestOptions)}, request body = ${JSON.stringify(event)}`, 'info', fileDescriptor);
 
     try 
     {
         response = await axios.post(esaUrl, event, requestOptions);
         if (response.status >= 400)
-            console.error(`Response status: ${response.status} - error detail: ${JSON.stringify(response.data)}`);
+            logEvent(`Response status: ${response.status} - error detail: ${JSON.stringify(response.data)}`, 'warn', fileDescriptor);
         else if (showResponse)
-        {
-            console.info(`ESA response: ${JSON.stringify(response.data)}`);
-            if (fileDescriptor)
-                fs.writeSync(fileDescriptor, `[INFO] ESA response: ${JSON.stringify(response.data)}\n`);
-        }
+            logEvent(`ESA response: ${JSON.stringify(response.data)}`, 'info', fileDescriptor);
     } catch (error) 
     {
-        console.error(`Response error: ${error.message}`);
+        logEvent(`ESA response error: ${error.message}`, 'error', fileDescriptor);
     }
 };
 
@@ -120,8 +122,8 @@ async function oneFlowTest(axiosClient, flowUrl, requestOptions, stats, fileDesc
     
     try
     {
-        if (reportToEsa && reportToEsa.enabled)
-            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.launchEvent, reportToEsa.userName, reportToEsa.password, activeConfig.DEBUG, reportToEsa.showResponse, fileDescriptor);
+        if (reportToEsa?.enabled)
+            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.launchEvent, reportToEsa.userName, reportToEsa.password, reportToEsa.showResponse, fileDescriptor);
 
         now = Date.now();
         response = await axiosClient.post(flowUrl, makeRequestBody(stats.totalNumRequests), requestOptions, fileDescriptor);
@@ -135,8 +137,8 @@ async function oneFlowTest(axiosClient, flowUrl, requestOptions, stats, fileDesc
             default:
         }
         
-        if (reportToEsa && reportToEsa.enabled)
-            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.postEvent, reportToEsa.userName, reportToEsa.password, activeConfig.DEBUG, reportToEsa.showResponse, fileDescriptor);
+        if (reportToEsa?.enabled)
+            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.postEvent, reportToEsa.userName, reportToEsa.password, reportToEsa.showResponse, fileDescriptor);
     } catch (error)
     {
         logEvent(`Error in retrieving flow response: ${error}`, 'error', fileDescriptor);
@@ -187,7 +189,7 @@ async function flowTestBatches(axiosClient, flowUrl, numRequests, requestOptions
         Number of successful flow invocations with failed executions: ${numSuccessfulFlowInvocations}/${totalNumRequests} (${100 * numSuccessfulFlowInvocations / totalNumRequests}%)
         Average roundtrip time to/from CXF flow = ${executionTime / totalNumRequests}ms
         ** ${numberFailedFlowInvocations}/${totalNumRequests} (${100 * numberFailedFlowInvocations / totalNumRequests}%) failed flow invocations were not counted in the average execution time **`;
-    logEvent(logStatement, 'info', fileDescriptor);
+    logEvent(logStatement, 'info', fileDescriptor, true);
     if (fileDescriptor)
         fs.writeSync(csvFileDescriptor, `${activeConfig.NUM_BATCHES}, ${numRequests}, ${totalNumRequests}, ${numSuccessfulFlowInvocationsAndExecutions}, ${100 * numSuccessfulFlowInvocationsAndExecutions / totalNumRequests}, ${numSuccessfulFlowInvocations}, ${100 * numSuccessfulFlowInvocations / totalNumRequests}, ${executionTime / totalNumRequests}\r\n`);
 }
@@ -230,6 +232,17 @@ async function flowTester()
             
         logStatement = `Load test starting at ${getCurrentTime()}`;
 
+        if (activeConfig?.VERBOSITY)
+        {
+            verbosity = activeConfig.VERBOSITY.toLowerCase();
+            if (!VERBOSITY_LEVELS.has(verbosity))
+            {
+                console.error('Valid VERBOSITY levels are "high" (request, responses, errors are being logged), "low" (requests and errors are being logged), and "none" (only errors are being logged)');
+                return;
+            }
+        }
+        else verbosity = 'low';
+
         requestTimeout = Math.min(Math.max(0, activeConfig?.TIMEOUT ?? 60000), 600000);
 
         requestOptions = !activeConfig.hasOwnProperty('BEARER_TOKEN') || EMPTY.test(activeConfig.BEARER_TOKEN) ? 
@@ -269,8 +282,8 @@ async function flowTester()
         }
 
         reportToEsa = activeConfig.REPORT_TO_ESA;
-        if (reportToEsa && reportToEsa.enabled)
-            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.initialEvent, reportToEsa.userName, reportToEsa.password, activeConfig.DEBUG, reportToEsa.showOutput, fileDescriptor);
+        if (reportToEsa?.enabled)
+            await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.initialEvent, reportToEsa.userName, reportToEsa.password, reportToEsa.showOutput, fileDescriptor);
 
         logEvent(logStatement, 'info', fileDescriptor);
         if (fileDescriptor)

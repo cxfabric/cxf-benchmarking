@@ -18,7 +18,7 @@ const config =
             WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v12.log',
             FILE_OVERWRITE: true,
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config1_1:
         {
@@ -36,7 +36,7 @@ const config =
             WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v6.log',
             FILE_OVERWRITE: true,
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config1_2:
         {
@@ -66,7 +66,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config1_3:
         {
@@ -96,7 +96,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config1_4:
         {
@@ -113,7 +113,7 @@ const config =
             WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-.log',
             FILE_OVERWRITE: true,
-            DEBUG: true
+            VERBOSITY: 'high'
         },
         config1_5:
         {
@@ -153,7 +153,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config_simple_1:
         {
@@ -166,8 +166,8 @@ const config =
             TIMEOUT: 100000,
             BEARER_TOKEN: '',
             INPUT_TEXT: 'I want to make an appointment',
-            NUM_BATCHES: 100,
-            REQUESTS_PER_BATCH: [250],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v20-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -184,7 +184,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: true
+            VERBOSITY: 'none'
         },
         config_local_1:
         {
@@ -214,7 +214,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: true
+            VERBOSITY: 'high'
         },
         config_local_2:
         {
@@ -244,7 +244,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: true
+            VERBOSITY: 'high'
         },
         config_local_3:
         {
@@ -274,7 +274,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config_local_4: 
         {
@@ -313,7 +313,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            DEBUG: true
+            VERBOSITY: 'high'
         },
         config2:
         {
@@ -330,7 +330,7 @@ const config =
             WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
             OUTPUT_FILE_NAME: './results/flow-tester-min-2-pods.log',
             FILE_OVERWRITE: true,
-            DEBUG: false
+            VERBOSITY: 'low'
         },
         config3:
         {
@@ -347,7 +347,7 @@ const config =
             WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
             OUTPUT_FILE_NAME: './results/flow-tester-2-pods-v3.log',
             FILE_OVERWRITE: true,
-            DEBUG: false
+            VERBOSITY: 'low'
         }
     }
 };
