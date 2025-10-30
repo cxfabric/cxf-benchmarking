@@ -1,0 +1,14 @@
+[INFO] Load test starting at 2025-10-28 16:03:14.226
+[INFO] 
+[INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false
+[INFO]   Starting test 1/1
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false
+[INFO] Number of batches: 1
+        Number of concurrent flow invocations: 1
+        Total number of flow invocations: 1
+        Number of successful flow invocations and executions: 1/1 (100%)
+        Number of successful flow invocations with failed executions: 0/1 (0%)
+        Average roundtrip time to/from CXF flow = 4020ms
+        ** 0/1 (0%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Tue Oct 28 2025 16:03:19 GMT-0400 (Eastern Daylight Time)

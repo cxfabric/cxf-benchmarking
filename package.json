@@ -1,0 +1,13 @@
+{
+  "name": "flow_tester",
+  "version": "1.0",
+  "author": "Reinhard Klemm",
+  "description": "Invokes CXF flows via their REST triggers, in batches of concurrent HTTP requests",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "date-format": "^4.0.14",
+    "js-base64": "^3.7.8",
+    "uuid": "^11.1.0"
+  },
+  "private": true
+}

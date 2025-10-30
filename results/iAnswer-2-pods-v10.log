@@ -1,0 +1,14 @@
+[INFO] Load test starting at 2025-10-20 18:27:21.555
+[INFO] 
+[INFO] Starting batch 1/1 with 1 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/1
+[INFO]   Response = {"isSuccessful":true,"message":"","resultObject":{"session_id":"7788bf9f622542"}}
+[WARN] 2025-10-20 18:27:22.423   Flow invocation successful but flow execution error
+[INFO] Number of batches: 1
+        Number of concurrent flow invocations: 1
+        Total number of flow invocations: 1
+        Number of successful flow invocations and executions: 0/1 (0%)
+        Number of successful flow invocations with failed executions: 1/1 (100%)
+        Average roundtrip time to/from CXF flow = 866ms
+        ** 0/1 (0%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Mon Oct 20 2025 18:27:24 GMT-0400 (Eastern Daylight Time)

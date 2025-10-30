@@ -1,0 +1,229 @@
+[INFO] Load test starting at 2025-08-12 20:06:29.601
+[INFO] 
+[INFO] Starting batch 1/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[WARN] 2025-08-12 20:06:43.836   Flow invocation successful but flow execution error
+[WARN] 2025-08-12 20:06:44.426   Flow invocation successful but flow execution error
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 2/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[WARN] 2025-08-12 20:07:09.187   Flow invocation successful but flow execution error
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 3/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 4/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[WARN] 2025-08-12 20:08:17.841   Flow invocation successful but flow execution error
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 5/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 6/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[WARN] 2025-08-12 20:09:57.161   Flow invocation successful but flow execution error
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 7/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[ERROR] 2025-08-12 20:11:14.083 Error in retrieving flow response: AxiosError: timeout of 60000ms exceeded
+[INFO] 
+[INFO] Starting batch 8/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 9/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 10/10 with 10 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10
+[INFO]   Starting test 2/10
+[INFO]   Starting test 3/10
+[INFO]   Starting test 4/10
+[INFO]   Starting test 5/10
+[INFO]   Starting test 6/10
+[INFO]   Starting test 7/10
+[INFO]   Starting test 8/10
+[INFO]   Starting test 9/10
+[INFO]   Starting test 10/10
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] Number of batches: 10
+        Number of concurrent flow invocations: 10
+        Total number of flow invocations: 100
+        Number of successful flow invocations and executions: 94/100 (94%)
+        Number of successful flow invocations with failed executions: 5/100 (5%)
+        Average roundtrip time to/from CXF flow = 24405.27ms
+        ** 1/100 (1%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Tue Aug 12 2025 20:13:09 GMT-0400 (Eastern Daylight Time)

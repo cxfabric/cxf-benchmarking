@@ -1,0 +1,75 @@
+[INFO] Load test starting at 2025-10-06 16:25:22.046
+[INFO] 
+[INFO] Starting batch 1/250 with 20 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/20
+[INFO]   Starting test 2/20
+[INFO]   Starting test 3/20
+[INFO]   Starting test 4/20
+[INFO]   Starting test 5/20
+[INFO]   Starting test 6/20
+[INFO]   Starting test 7/20
+[INFO]   Starting test 8/20
+[INFO]   Starting test 9/20
+[INFO]   Starting test 10/20
+[INFO]   Starting test 11/20
+[INFO]   Starting test 12/20
+[INFO]   Starting test 13/20
+[INFO]   Starting test 14/20
+[INFO]   Starting test 15/20
+[INFO]   Starting test 16/20
+[INFO]   Starting test 17/20
+[INFO]   Starting test 18/20
+[INFO]   Starting test 19/20
+[INFO]   Starting test 20/20
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[ERROR] 2025-10-06 16:26:00.223 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.225 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.225 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.228 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.229 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.262 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.263 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.264 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.265 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.266 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[INFO] 
+[INFO] Starting batch 2/250 with 20 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/20
+[INFO]   Starting test 2/20
+[INFO]   Starting test 3/20
+[INFO]   Starting test 4/20
+[INFO]   Starting test 5/20
+[INFO]   Starting test 6/20
+[INFO]   Starting test 7/20
+[INFO]   Starting test 8/20
+[INFO]   Starting test 9/20
+[INFO]   Starting test 10/20
+[INFO]   Starting test 11/20
+[INFO]   Starting test 12/20
+[INFO]   Starting test 13/20
+[INFO]   Starting test 14/20
+[INFO]   Starting test 15/20
+[INFO]   Starting test 16/20
+[INFO]   Starting test 17/20
+[INFO]   Starting test 18/20
+[INFO]   Starting test 19/20
+[INFO]   Starting test 20/20
+[ERROR] 2025-10-06 16:26:00.423 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.426 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.428 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.430 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.430 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.472 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.475 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.488 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.509 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[ERROR] 2025-10-06 16:26:00.519 Error in retrieving flow response: AxiosError: Request failed with status code 502

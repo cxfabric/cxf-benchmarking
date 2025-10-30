@@ -1,0 +1,71 @@
+[INFO] Load test starting at 2025-10-26 13:13:52.757
+[INFO] 
+[INFO] Starting batch 1/2 with 10 concurrent request(s)
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=66b0eb5a-5e90-4a13-8911-d36072f54469&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[ERROR] 2025-10-26 13:13:52.846 Error in retrieving flow response: AxiosError: Request failed with status code 500
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO] 
+[INFO] Starting batch 2/2 with 10 concurrent request(s)
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=66b0eb5a-5e90-4a13-8911-d36072f54469&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Starting test 1/10 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[ERROR] 2025-10-26 13:13:54.159 Error in retrieving flow response: AxiosError: Request failed with status code 500
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Flow invocation and execution successful for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO] Number of batches: 2
+        Number of concurrent flow invocations: 10
+        Total number of flow invocations: 20
+        Number of successful flow invocations and executions: 18/20 (90%)
+        Number of successful flow invocations with failed executions: 0/20 (0%)
+        Average roundtrip time to/from CXF flow = 519.4ms
+        ** 2/20 (10%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Sun Oct 26 2025 13:13:54 GMT-0400 (Eastern Daylight Time)

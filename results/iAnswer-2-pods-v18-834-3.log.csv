@@ -1,0 +1,2 @@
+"Number batches", "Number concurrent flow invocations", "Total number flow invocations", "Number successful flow invocations + executions", "% successful flow invocations + executions", "Number successful flow invocations with failed executions", "% successful flow invocations with failed executions", "Average flow roundtrip time (ms)"
+834, 3, 25020, 24985, 99.86011191047162, 1, 0.003996802557953637, 3722.819744204636

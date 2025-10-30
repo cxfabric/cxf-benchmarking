@@ -1,0 +1,31 @@
+[INFO] Load test starting at 2025-10-24 11:17:56.748
+[INFO] 
+[INFO] Starting batch 1/1 with 10 concurrent request(s)
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Starting test 1/10 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[ERROR] 2025-10-24 11:18:05.848 Error in retrieving flow response: AxiosError: Request failed with status code 502
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true
+[INFO]   Flow invocation and execution successful for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true
+[INFO] Number of batches: 1
+        Number of concurrent flow invocations: 10
+        Total number of flow invocations: 10
+        Number of successful flow invocations and executions: 9/10 (90%)
+        Number of successful flow invocations with failed executions: 0/10 (0%)
+        Average roundtrip time to/from CXF flow = 5969.5ms
+        ** 1/10 (10%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Fri Oct 24 2025 11:18:07 GMT-0400 (Eastern Daylight Time)

@@ -1,0 +1,30 @@
+[INFO] Load test starting at 2025-08-22 13:27:49.647
+[INFO] 
+[INFO] Starting batch 1/10 with 2 concurrent request(s)
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 2/10 with 2 concurrent request(s)
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 3/10 with 2 concurrent request(s)
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 4/10 with 2 concurrent request(s)
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
+[INFO]   Flow invocation and execution successful
+[INFO]   Flow invocation and execution successful
+[INFO] 
+[INFO] Starting batch 5/10 with 2 concurrent request(s)
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
+[INFO]   Flow invocation and execution successful
