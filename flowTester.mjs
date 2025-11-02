@@ -180,7 +180,7 @@ async function flowTestBatches(axiosClient, flowUrl, numRequests, requestOptions
         
         await Promise.all(flowInvocationBatch);
 
-        await setTimeout(activeConfig.WAIT_TIME_MS_BETWEEN_REQUESTS);
+        await setTimeout(activeConfig.WAIT_TIME_MS_BETWEEN_BATCHES);
     }
 
     const { numSuccessfulFlowInvocationsAndExecutions, numSuccessfulFlowInvocations, totalNumRequests, executionTime } = stats,
@@ -294,8 +294,8 @@ async function flowTester()
             fs.writeSync(csvFileDescriptor, '"Number batches", "Number concurrent flow invocations", "Total number flow invocations", "Number successful flow invocations + executions", "% successful flow invocations + executions", "Number successful flow invocations with failed executions", "% successful flow invocations with failed executions", "Average flow roundtrip time (ms)"\r\n');
 
         if (Array.isArray(activeConfig.REQUESTS_PER_BATCH) && activeConfig.REQUESTS_PER_BATCH.length > 0)
-            if (activeConfig.NUM_BATCHES <= 0 || activeConfig.WAIT_TIME_MS_BETWEEN_REQUESTS <= 0)
-                console.error('Invalid configuration: NUM_BATCHES, WAIT_TIME_MS_BETWEEN_REQUESTS must all be greater than 0');
+            if (activeConfig.NUM_BATCHES <= 0 || activeConfig.WAIT_TIME_MS_BETWEEN_BATCHES <= 0)
+                console.error('Invalid configuration: NUM_BATCHES, WAIT_TIME_MS_BETWEEN_BATCHES must all be greater than 0');
             else if (activeConfig.POLICY.toLowerCase() === 'batch')
                 for (flowIndex = 0; flowIndex < activeConfig.FLOW_REST_URLS.length; flowIndex++)
                     for (index = 0; index < activeConfig.REQUESTS_PER_BATCH.length; index++)

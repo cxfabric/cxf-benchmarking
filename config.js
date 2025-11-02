@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_simple_1',
+    activeConfiguration: 'config_local_1',
     configurations:
     {
         config1_0:
@@ -15,7 +15,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v12.log',
             FILE_OVERWRITE: true,
             VERBOSITY: 'low'
@@ -33,7 +33,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 2000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v6.log',
             FILE_OVERWRITE: true,
             VERBOSITY: 'low'
@@ -50,7 +50,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 250,
             REQUESTS_PER_BATCH: [20],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v13.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -80,7 +80,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -110,7 +110,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 2000,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 2000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-.log',
             FILE_OVERWRITE: true,
             VERBOSITY: 'high'
@@ -137,7 +137,7 @@ const config =
             INPUT_TEXT: 'I want to make an appointment',
             NUM_BATCHES: 193,
             REQUESTS_PER_BATCH: [13],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v18-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -166,9 +166,9 @@ const config =
             TIMEOUT: 100000,
             BEARER_TOKEN: '',
             INPUT_TEXT: 'I want to make an appointment',
-            NUM_BATCHES: 193,
-            REQUESTS_PER_BATCH: [130],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            NUM_BATCHES: 2500,
+            REQUESTS_PER_BATCH: [10],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v20-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -198,7 +198,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -228,7 +228,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 250,
             REQUESTS_PER_BATCH: [20],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -258,7 +258,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -297,7 +297,7 @@ const config =
             INPUT_TEXT: 'I want to make a reservation',
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
@@ -327,7 +327,7 @@ const config =
             INPUT_TEXT: 'Hello, please return OK!',
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 1000,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/flow-tester-min-2-pods.log',
             FILE_OVERWRITE: true,
             VERBOSITY: 'low'
@@ -344,7 +344,7 @@ const config =
             INPUT_TEXT: 'Please return OK!',
             NUM_BATCHES: 25,
             REQUESTS_PER_BATCH: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-            WAIT_TIME_MS_BETWEEN_REQUESTS: 100,
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/flow-tester-2-pods-v3.log',
             FILE_OVERWRITE: true,
             VERBOSITY: 'low'
