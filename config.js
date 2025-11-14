@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_local_1',
+    activeConfiguration: 'config_hh_1',
     configurations:
     {
         config1_0:
@@ -155,6 +155,24 @@ const config =
             },
             VERBOSITY: 'low'
         },
+        config_hh_1:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev-hh.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true',
+                ],
+            POLICY: 'batch',
+            BEARER_TOKEN: '',
+            INPUT_TEXT: 'I want to make a reservation',
+            NUM_BATCHES: 100,
+            REQUESTS_PER_BATCH: [10],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 50,
+            OUTPUT_FILE_NAME: './results/iAnswer-hh-1.log',
+            FILE_OVERWRITE: true,
+            VERBOSITY: 'high',
+            TIMEOUT: 60000
+        },
         config_simple_1:
         {
             name: 'iAnswer',
@@ -196,8 +214,8 @@ const config =
             POLICY: 'batch',
             BEARER_TOKEN: '',
             INPUT_TEXT: 'I want to make a reservation',
-            NUM_BATCHES: 1,
-            REQUESTS_PER_BATCH: [1],
+            NUM_BATCHES: 10,
+            REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
