@@ -1,0 +1,13 @@
+[INFO] Load test starting at 2025-12-05 17:22:12.565
+[INFO] 
+[INFO] Starting batch 1/1 with 1 concurrent request(s)
+[INFO]   Starting test 1/1 with flow https://cxf-executor-dev.cxfabric.io/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
+[ERROR] 2025-12-05 17:22:12.739 Error in retrieving flow response: AxiosError: Request failed with status code 404
+[INFO] Number of batches: 1
+        Number of concurrent flow invocations: 1
+        Total number of flow invocations: 1
+        Number of successful flow invocations and executions: 0/1 (0%)
+        Number of successful flow invocations with failed executions: 0/1 (0%)
+        Average roundtrip time to/from CXF flow = 0ms
+        ** 1/1 (100%) failed flow invocations were not counted in the average execution time **
+[INFO] Load test ended at Fri Dec 05 2025 17:22:12 GMT-0500 (Eastern Standard Time)

@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_hh_1',
+    activeConfiguration: 'config1_4',
     configurations:
     {
         config1_0:
@@ -103,7 +103,8 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true',
+                   // 'http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true'
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
@@ -309,6 +310,36 @@ const config =
                     'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=false',
                     'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=false',
                     'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true&displayExecutionLogs=false' 
+                ],
+            POLICY: 'alternate',
+            BEARER_TOKEN: '',
+            INPUT_TEXT: 'I want to make a reservation',
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 100,
+            OUTPUT_FILE_NAME: './results/iAnswer-2-pods-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_local_5: 
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false' 
                 ],
             POLICY: 'alternate',
             BEARER_TOKEN: '',
