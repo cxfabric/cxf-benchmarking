@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config1_4',
+    activeConfiguration: 'config1_7',
     configurations:
     {
         config1_0:
@@ -167,13 +167,90 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true',
-                   // 'http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true'
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
-            INPUT: { chatInput: 'I want to make a reservation' },
-            RESPONSE: { success: true, message: [ "How may I help you today?" ] },
+            INPUT: 
+            {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "ringing",
+                From: "+19088757894",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+19088757894",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<\?xml>.+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 2000,
+            OUTPUT_FILE_NAME: './results/iAnswer-2-pods-.log',
+            FILE_OVERWRITE: true,
+            VERBOSITY: 'high'
+        },
+        config1_7:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true'
+                ],
+            POLICY: 'batch',
+            BEARER_TOKEN: '',
+            INPUT: 
+            {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "Swedish",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "in-progress",
+                From: "+19088757894",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+19088757894",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<\?xml>.+" ] },
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 2000,
