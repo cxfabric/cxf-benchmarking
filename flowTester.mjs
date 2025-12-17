@@ -13,7 +13,8 @@ const ALL_CONFIGS = config,
 
 var activeConfig,
     verbosity,
-    dotOutputs = 0;
+    dotOutputs = 0,
+    expectedResponseKeys;
 
 function getCurrentTime()
 {
@@ -54,7 +55,7 @@ function logEvent(logEntry, eventCategory, fileDescriptor, overrideVerbosity = f
 function makeRequestBody(numRequests)
 {
     return {
-        chatInput: activeConfig.INPUT_TEXT,
+        ...activeConfig.INPUT,
         sessionId: uuidv4(),
         label: `Request ${numRequests}`
     };
@@ -62,25 +63,54 @@ function makeRequestBody(numRequests)
 
 function processResponse(response, flowUrl, fileDescriptor) 
 {
+    let actualResponseKeys;
+
     if (response.status === 200)
     {
         if (verbosity === 'high')
             logEvent(`  Response = ${JSON.stringify(response.data)} for flow ${flowUrl}`, 'info', fileDescriptor);
-        if (response.data.success)
-            if (response.data?.message?.length > 0)
+        if (response.data && typeof response.data === 'object')
+        {
+            actualResponseKeys = new Set(Object.keys(response.data));
+            if (actualResponseKeys.isSupersetOf(expectedResponseKeys))
             {
+                for (const [ key, value ] of Object.entries(response.data))
+                    if (typeof value === 'string')
+                    {
+                        if (!new RegExp(value).test(activeConfig.RESPONSE[key]))
+                        {
+                            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response key "${key}" value "${value}" does not correspond to expected pattern "${activeConfig.RESPONSE[key]}"`, 'warn', fileDescriptor);
+                            return 1;        
+                        }
+                    }
+                    else if (typeof value === 'object')
+                        for (const [ key, value ] of Object.entries(activeConfig.RESPONSE))
+                        {
+                            if (value !== response.data[key])
+                            {
+                                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response key "${key}" value "${value}" does not correspond to expected object "${activeConfig.RESPONSE[key]}"`, 'warn', fileDescriptor);
+                                return 1;        
+                            }
+                        }
+                    else if (value !== activeConfig.RESPONSE[key])
+                    {
+                        logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response key "${key}" value "${value}" does not correspond to expected value "${activeConfig.RESPONSE[key]}"`, 'warn', fileDescriptor);
+                        return 1;        
+                    }
+                
                 if (verbosity !== 'none')
                     logEvent(`  Flow invocation and execution successful for flow ${flowUrl}`, 'info', fileDescriptor);
                 return 2;
             }
-            else
+            else 
             {
-                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}`, 'warn', fileDescriptor);
+                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: expected response keys ${expectedResponseKeys} but got ${actualResponseKeys}`, 'warn', fileDescriptor);
                 return 1;
-            } 
+            }
+        }
         else 
         {
-            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}`, 'warn', fileDescriptor);
+            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: no response payload or response payload is not a JSON object`, 'warn', fileDescriptor);
             return 1;
         }
     }
@@ -296,8 +326,25 @@ async function flowTester()
         if (Array.isArray(activeConfig.REQUESTS_PER_BATCH) && activeConfig.REQUESTS_PER_BATCH.length > 0)
             if (activeConfig.NUM_BATCHES <= 0 || activeConfig.WAIT_TIME_MS_BETWEEN_BATCHES <= 0)
                 console.error('Invalid configuration: NUM_BATCHES, WAIT_TIME_MS_BETWEEN_BATCHES must all be greater than 0');
-            else if (activeConfig.POLICY.toLowerCase() === 'batch')
-                for (flowIndex = 0; flowIndex < activeConfig.FLOW_REST_URLS.length; flowIndex++)
+            else 
+            {
+                expectedResponseKeys = new Set(Object.keys(activeConfig.RESPONSE));
+                if (activeConfig.POLICY.toLowerCase() === 'batch')
+                    for (flowIndex = 0; flowIndex < activeConfig.FLOW_REST_URLS.length; flowIndex++)
+                        for (index = 0; index < activeConfig.REQUESTS_PER_BATCH.length; index++)
+                        {
+                            stats = 
+                            {
+                                numSuccessfulFlowInvocationsAndExecutions: 0,
+                                numSuccessfulFlowInvocations: 0,
+                                totalNumRequests: 0,
+                                batchNumber: 0,
+                                executionTime: 0
+                            };
+                    
+                            await flowTestBatches(axiosClient, activeConfig.FLOW_REST_URLS[flowIndex], activeConfig.REQUESTS_PER_BATCH[index], requestOptions, stats, fileDescriptor, csvFileDescriptor);
+                        }
+                else if (activeConfig.POLICY.toLowerCase() === 'alternate')
                     for (index = 0; index < activeConfig.REQUESTS_PER_BATCH.length; index++)
                     {
                         stats = 
@@ -309,23 +356,10 @@ async function flowTester()
                             executionTime: 0
                         };
                 
-                        await flowTestBatches(axiosClient, activeConfig.FLOW_REST_URLS[flowIndex], activeConfig.REQUESTS_PER_BATCH[index], requestOptions, stats, fileDescriptor, csvFileDescriptor);
+                        await flowTestBatches(axiosClient, null, activeConfig.REQUESTS_PER_BATCH[index], requestOptions, stats, fileDescriptor, csvFileDescriptor);
                     }
-            else if (activeConfig.POLICY.toLowerCase() === 'alternate')
-                for (index = 0; index < activeConfig.REQUESTS_PER_BATCH.length; index++)
-                {
-                    stats = 
-                    {
-                        numSuccessfulFlowInvocationsAndExecutions: 0,
-                        numSuccessfulFlowInvocations: 0,
-                        totalNumRequests: 0,
-                        batchNumber: 0,
-                        executionTime: 0
-                    };
-            
-                    await flowTestBatches(axiosClient, null, activeConfig.REQUESTS_PER_BATCH[index], requestOptions, stats, fileDescriptor, csvFileDescriptor);
-                }
             else console.error('POLICY must be either ALTERNATE or BATCH');
+        }
         else console.error('REQUESTS_PER_BATCH must be an array with length > 0');
 
         logStatement = `Load test ended at ${new Date(Date.now()).toString()}`;
