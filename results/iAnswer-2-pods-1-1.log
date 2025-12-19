@@ -1,15 +1,14 @@
-[INFO] Flow test starting at 2025-12-19 14:33:25.624
+[INFO] Flow test starting at 2025-12-19 14:53:10.179
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s)
-[INFO]   Starting test 1/1 with flow http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false
-[INFO]   Response = {"isSuccessful":true,"message":"","resultObject":{"execution_batch_datetime":"2025-12-19T19:33:26.872Z","session_id":"0fe1856158ca40"}} for flow http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false
-[WARN] 2025-12-19 14:33:26.941   Flow invocation successful but flow execution error for flow http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false: flow response {"isSuccessful":true,"message":"","resultObject":{"execution_batch_datetime":"2025-12-19T19:33:26.872Z","session_id":"0fe1856158ca40"}} key "" value "{"isSuccessful":true,"message":"","resultObject":{"execution_batch_datetime":"2025-12-19T19:33:26.872Z","session_id":"0fe1856158ca40"}}" does not contain all properties expected in "{"success":true,"message":["How may I help you today?"]}"
+[INFO]   Starting test 1/1 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true
+[INFO]   Response = {"success":true,"message":["How may I help you today?"]} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true
 [INFO] Number of batches: 1
         Number of concurrent flow invocations: 1
         Total number of flow invocations: 1
         Number of successful flow invocations and executions: 0/1 (0%)
         Number of successful flow invocations with failed executions: 1/1 (100%)
         Number of unsuccessful flow invocations: 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 1316ms
-        Total execution time: 1.419 seconds
-[INFO] Flow test ended at Fri Dec 19 2025 14:33:27 GMT-0500 (Eastern Standard Time)
+        Average roundtrip time to/from CXF flow = 2884ms
+        Total execution time: 2.988 seconds
+[INFO] Flow test ended at Fri Dec 19 2025 14:53:13 GMT-0500 (Eastern Standard Time)

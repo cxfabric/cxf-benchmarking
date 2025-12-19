@@ -80,7 +80,7 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj, 
             {
                 for (const [ key, value ] of Object.entries(obj))
                 {
-                    if (matchesExpectedObject(flowUrl, fileDescriptor, `${path}.${key}`, value, expectedObj[key]) < 2, rsponse)
+                    if (matchesExpectedObject(flowUrl, fileDescriptor, `${path}.${key}`, value, expectedObj[key]) < 2, response)
                         return 1;        
                 }
                 return 2;

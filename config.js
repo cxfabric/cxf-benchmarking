@@ -517,7 +517,7 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/webhook?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false' 
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true' 
                 ],
             POLICY: 'alternate',
             BEARER_TOKEN: '',
