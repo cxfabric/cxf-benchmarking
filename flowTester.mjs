@@ -9,7 +9,8 @@ import format from "date-format";
 const ALL_CONFIGS = config,
     EMPTY = /^[\s'"]*$/,
     VERBOSITY_LEVELS = new Set([ 'high', 'low', 'none' ]),
-    DOT_OUTPUT_EVERY = 100;
+    DOT_OUTPUT_EVERY = 100,
+    NOW = Date.now();
 
 var activeConfig,
     verbosity,
@@ -60,7 +61,7 @@ function makeRequestBody(numRequests)
     };
 }
 
-function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj)
+function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj, response)
 {
     let objKeys;
 
@@ -69,7 +70,7 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj)
 
     if (typeof obj === 'object')
         if (Array.isArray(obj))
-            if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index]) === 2 ))
+            if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index]) === 2 ), response)
                 return 2;
             else return 1;        
         else
@@ -79,14 +80,14 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj)
             {
                 for (const [ key, value ] of Object.entries(obj))
                 {
-                    if (matchesExpectedObject(flowUrl, fileDescriptor, `${path}.${key}`, value, expectedObj[key]) < 2)
+                    if (matchesExpectedObject(flowUrl, fileDescriptor, `${path}.${key}`, value, expectedObj[key]) < 2, rsponse)
                         return 1;        
                 }
                 return 2;
             }
             else
             {
-                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response "${path}" value "${JSON.stringify(obj)}" does not contain all properties expected in "${JSON.stringify(expectedObj)}"`, 'warn', fileDescriptor);
+                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${JSON.stringify(obj)}" does not contain all properties expected in "${JSON.stringify(expectedObj)}"`, 'warn', fileDescriptor);
                 return 1;        
             }
         }
@@ -96,14 +97,14 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj)
             return 2;
         else
         {
-            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response key "${path}" value "${obj}" does not correspond to expected pattern "${expectedObj}"`, 'warn', fileDescriptor);
+            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not correspond to expected pattern "${expectedObj}"`, 'warn', fileDescriptor);
             return 1;        
         }
 
     if (obj === expectedObj)
         return 2;
 
-    logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response key "${path}" value "${obj}" does not have expected value "${expectedObj}"`, 'warn', fileDescriptor);
+    logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not have expected value "${expectedObj}"`, 'warn', fileDescriptor);
     return 1;     
 }
 
@@ -114,7 +115,7 @@ function processResponse(response, flowUrl, fileDescriptor)
         if (verbosity === 'high')
             logEvent(`  Response = ${JSON.stringify(response.data)} for flow ${flowUrl}`, 'info', fileDescriptor);
         if (response.data)
-            return matchesExpectedObject(flowUrl, fileDescriptor, '', response.data, activeConfig.RESPONSE);
+            return matchesExpectedObject(flowUrl, fileDescriptor, '', response.data, activeConfig.RESPONSE, response.data);
         else 
         {
             logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: no response payload or response payload is not a JSON object`, 'warn', fileDescriptor);
@@ -228,8 +229,9 @@ async function flowTestBatches(axiosClient, flowUrl, numRequests, requestOptions
         Total number of flow invocations: ${totalNumRequests}
         Number of successful flow invocations and executions: ${numSuccessfulFlowInvocationsAndExecutions}/${totalNumRequests} (${100 * numSuccessfulFlowInvocationsAndExecutions / totalNumRequests}%)
         Number of successful flow invocations with failed executions: ${numSuccessfulFlowInvocations}/${totalNumRequests} (${100 * numSuccessfulFlowInvocations / totalNumRequests}%)
+        Number of unsuccessful flow invocations: ${numberFailedFlowInvocations}/${totalNumRequests} (${100 * numberFailedFlowInvocations / totalNumRequests}%)
         Average roundtrip time to/from CXF flow = ${executionTime / totalNumRequests}ms
-        ** ${numberFailedFlowInvocations}/${totalNumRequests} (${100 * numberFailedFlowInvocations / totalNumRequests}%) failed flow invocations were not counted in the average execution time **`;
+        Total execution time: ${(Date.now() - NOW) / 1000} seconds`;
     logEvent(logStatement, 'info', fileDescriptor, true);
     if (fileDescriptor)
         fs.writeSync(csvFileDescriptor, `${activeConfig.NUM_BATCHES}, ${numRequests}, ${totalNumRequests}, ${numSuccessfulFlowInvocationsAndExecutions}, ${100 * numSuccessfulFlowInvocationsAndExecutions / totalNumRequests}, ${numSuccessfulFlowInvocations}, ${100 * numSuccessfulFlowInvocations / totalNumRequests}, ${executionTime / totalNumRequests}\r\n`);

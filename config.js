@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config1_7',
+    activeConfiguration: 'config_local_5',
     configurations:
     {
         config1_0:
@@ -146,6 +146,76 @@ const config =
             REQUESTS_PER_BATCH: [13],
             WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v18-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'low'
+        },
+        config1_5_local:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=false',
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=dfa1bfc4-dd15-4f64-801c-caa5d403f2db&draft=true&displayExecutionLogs=false'
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "ringing",
+                From: "+19088757894",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+19088757894",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<\?xml>.+" ] },
+            NUM_BATCHES: 250,
+            REQUESTS_PER_BATCH: [10],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './results/after-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
             {
