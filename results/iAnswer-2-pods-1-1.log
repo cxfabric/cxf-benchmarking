@@ -1,4 +1,4 @@
-[INFO] Flow test starting at 2025-12-19 14:53:10.179
+[INFO] Flow test starting at 2025-12-19 17:27:42.385
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s)
 [INFO]   Starting test 1/1 with flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true
@@ -9,6 +9,6 @@
         Number of successful flow invocations and executions: 0/1 (0%)
         Number of successful flow invocations with failed executions: 1/1 (100%)
         Number of unsuccessful flow invocations: 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 2884ms
-        Total execution time: 2.988 seconds
-[INFO] Flow test ended at Fri Dec 19 2025 14:53:13 GMT-0500 (Eastern Standard Time)
+        Average roundtrip time to/from CXF flow = 2668ms
+        Total execution time: 2.772 seconds
+[INFO] Flow test ended at Fri Dec 19 2025 17:27:45 GMT-0500 (Eastern Standard Time)

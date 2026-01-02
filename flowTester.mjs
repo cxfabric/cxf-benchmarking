@@ -9,12 +9,11 @@ import format from "date-format";
 const ALL_CONFIGS = config,
     EMPTY = /^[\s'"]*$/,
     VERBOSITY_LEVELS = new Set([ 'high', 'low', 'none' ]),
-    DOT_OUTPUT_EVERY = 100,
     NOW = Date.now();
 
 var activeConfig,
     verbosity,
-    dotOutputs = 0;
+    configuredTotalNumberOfRequests = 0;
 
 function getCurrentTime()
 {
@@ -33,8 +32,6 @@ function logEvent(logEntry, eventCategory, fileDescriptor, overrideVerbosity = f
             if (fileDescriptor)
                 fs.writeSync(fileDescriptor, `[INFO] ${logEntry}\n`);
         }
-        else if (dotOutputs++ % DOT_OUTPUT_EVERY === 0)
-            console.info('.');
     }
     else if (eventCategory === 'error')
     {
@@ -183,7 +180,7 @@ async function oneFlowTest(axiosClient, flowUrl, requestOptions, stats, fileDesc
             await sendToEsa(reportToEsa.esaUrl, reportToEsa.analysisId, reportToEsa.entityId, reportToEsa.postEvent, reportToEsa.userName, reportToEsa.password, reportToEsa.showResponse, fileDescriptor);
     } catch (error)
     {
-        logEvent(`Error in retrieving flow response: ${error}`, 'error', fileDescriptor);
+        logEvent(`Error in retrieving flow response: ${JSON.stringify(error)}`, 'error', fileDescriptor);
     }
 }
 
@@ -215,11 +212,14 @@ async function flowTestBatches(axiosClient, flowUrl, numRequests, requestOptions
                 logEvent(`  Starting test ${index + 1}/${numConcurrentRequests} with flow ${flowUrl}`, 'info', fileDescriptor);
                 flowInvocationBatch.push(oneFlowTest(axiosClient, flowUrl, requestOptions, stats, fileDescriptor, activeConfig.REPORT_TO_ESA));
             });
-        
+        process.stdout.write(`\r\x1b[32m[INFO]\x1b[0m Load test approximately ${Math.round((stats.totalNumRequests * 100) / configuredTotalNumberOfRequests)}% complete`);
+
         await Promise.all(flowInvocationBatch);
 
         await setTimeout(activeConfig.WAIT_TIME_MS_BETWEEN_BATCHES);
     }
+
+    process.stdout.write('\n'); 
 
     const { numSuccessfulFlowInvocationsAndExecutions, numSuccessfulFlowInvocations, totalNumRequests, executionTime } = stats,
         numberFailedFlowInvocations = activeConfig.NUM_BATCHES * numRequests * activeConfig.FLOW_REST_URLS.length - numSuccessfulFlowInvocationsAndExecutions - numSuccessfulFlowInvocations;
@@ -229,7 +229,7 @@ async function flowTestBatches(axiosClient, flowUrl, numRequests, requestOptions
         Total number of flow invocations: ${totalNumRequests}
         Number of successful flow invocations and executions: ${numSuccessfulFlowInvocationsAndExecutions}/${totalNumRequests} (${100 * numSuccessfulFlowInvocationsAndExecutions / totalNumRequests}%)
         Number of successful flow invocations with failed executions: ${numSuccessfulFlowInvocations}/${totalNumRequests} (${100 * numSuccessfulFlowInvocations / totalNumRequests}%)
-        Number of unsuccessful flow invocations: ${numberFailedFlowInvocations}/${totalNumRequests} (${100 * numberFailedFlowInvocations / totalNumRequests}%)
+        Number of unsuccessful flow invocations (not counted in the average flow execution time): ${numberFailedFlowInvocations}/${totalNumRequests} (${100 * numberFailedFlowInvocations / totalNumRequests}%)
         Average roundtrip time to/from CXF flow = ${executionTime / totalNumRequests}ms
         Total execution time: ${(Date.now() - NOW) / 1000} seconds`;
     logEvent(logStatement, 'info', fileDescriptor, true);
@@ -337,6 +337,7 @@ async function flowTester()
                 console.error('Invalid configuration: NUM_BATCHES, WAIT_TIME_MS_BETWEEN_BATCHES must all be greater than 0');
             else 
             {
+                activeConfig.REQUESTS_PER_BATCH.forEach((numRequests) => configuredTotalNumberOfRequests += numRequests * activeConfig.FLOW_REST_URLS.length * activeConfig.NUM_BATCHES);
                 if (activeConfig.POLICY.toLowerCase() === 'batch')
                     for (flowIndex = 0; flowIndex < activeConfig.FLOW_REST_URLS.length; flowIndex++)
                         for (index = 0; index < activeConfig.REQUESTS_PER_BATCH.length; index++)
