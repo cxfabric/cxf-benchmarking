@@ -1,0 +1,14 @@
+[INFO] Flow test starting at 2026-02-18 17:18:50.979
+[INFO] 
+[INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true
+[INFO]   Starting test 1/1
+[INFO]   Response = "Thank you for your submission to CXF!" for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true
+[INFO] Number of batches: 1
+        Number of concurrent flow invocations: 1
+        Total number of flow invocations: 1
+        Number of successful flow invocations and executions: 1/1 (100%)
+        Number of successful flow invocations with failed executions: 0/1 (0%)
+        Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
+        Average roundtrip time to/from CXF flow = 1375ms
+        Total execution time: 1.388 seconds
+[INFO] Flow test ended at Wed Feb 18 2026 17:18:52 GMT-0500 (Eastern Standard Time)

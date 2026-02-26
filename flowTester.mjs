@@ -119,7 +119,7 @@ function processResponse(response, flowUrl, fileDescriptor)
             return 1;
         }
     }
-    logEvent(` Flow invocation error ${errorMessage}`, 'error', fileDescriptor);
+    logEvent(` Flow invocation error resulted in response status ${response.status}`, 'error', fileDescriptor);
     return 0;
 }
 
@@ -131,7 +131,7 @@ async function sendToEsa(esaUrl, analysisId, entityId, event, userName, password
         timeout: 30000
     };
 
-    let response = null;
+    let response;
 
     if (!esaUrl.endsWith('/'))
         esaUrl = esaUrl + '/';
@@ -252,10 +252,10 @@ async function flowTester()
         reportToEsa,
         outputFileName;
 
-    if (ALL_CONFIGS.hasOwnProperty('configurations') && typeof ALL_CONFIGS.configurations === 'object')
+    if (ALL_CONFIGS?.configurations && typeof ALL_CONFIGS.configurations === 'object')
     {
-        if (ALL_CONFIGS.hasOwnProperty('activeConfiguration'))
-            if (ALL_CONFIGS.configurations.hasOwnProperty(ALL_CONFIGS.activeConfiguration))
+        if (ALL_CONFIGS?.activeConfiguration)
+            if (ALL_CONFIGS.configurations?.[ALL_CONFIGS.activeConfiguration])
             {
                 activeConfig = ALL_CONFIGS.configurations[ALL_CONFIGS.activeConfiguration];
                 console.info(`Selected configuration ${ALL_CONFIGS.activeConfiguration}`);
@@ -288,7 +288,7 @@ async function flowTester()
 
         requestTimeout = Math.min(Math.max(0, activeConfig?.TIMEOUT ?? 60000), 600000);
 
-        requestOptions = !activeConfig.hasOwnProperty('BEARER_TOKEN') || EMPTY.test(activeConfig.BEARER_TOKEN) ? 
+        requestOptions = !activeConfig?.BEARER_TOKEN || EMPTY.test(activeConfig.BEARER_TOKEN) ? 
         {
             headers: 
             { 
