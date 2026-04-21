@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config1_9_local',
+    activeConfiguration: 'config_local_2_1',
     configurations:
     {
         config1_0:
@@ -447,8 +447,8 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 1,
-            REQUESTS_PER_BATCH: [1],
+            NUM_BATCHES: 250,
+            REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -472,7 +472,7 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false&targetUserId=auth0|66a3c6cf38a49e5264f86ecb'
                 ],
             POLICY: 'alternate',
             TIMEOUT: 100000,
@@ -482,7 +482,7 @@ const config =
                 ToState: "TX",
                 CallerCountry: "US",
                 Direction: "inbound",
-                SpeechResult: "",
+                SpeechResult: "Make a reservation",
                 CallerState: "NJ",
                 Language: "en-US",
                 ToZip: "",
@@ -494,7 +494,7 @@ const config =
                 CalledZip: "",
                 ApiVersion: "2010-04-01",
                 CalledCity: "",
-                CallStatus: "ringing",
+                CallStatus: "in-progress",
                 From: "+19088757894",
                 AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
                 CalledCountry: "US",
@@ -508,8 +508,40 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 10,
-            REQUESTS_PER_BATCH: [10],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config1_10_local:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true&targetUserId=*',//auth0|66a3c6cf38a49e5264f86ecb'
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT: { year: 1999 },
+            RESPONSE: { success: true, message: [ ".+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -591,8 +623,8 @@ const config =
             BEARER_TOKEN: '',
             INPUT: { chatInput: 'Hello, there!' },
             RESPONSE: { success: true, message: [ "This is .+ response" ] },
-            NUM_BATCHES: 25,
-            REQUESTS_PER_BATCH: [1000],
+            NUM_BATCHES: 100,
+            REQUESTS_PER_BATCH: [250],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/simple-flow-local-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -647,20 +679,20 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true&displayExecutionLogs=false'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true&displayExecutionLogs=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb'
                 ],
             POLICY: 'batch',
             BEARER_TOKEN: '',
             INPUT: { chatInput: 'I want to make a reservation' },
             RESPONSE: { success: true, message: [ "How may I help you today?" ] },
-            NUM_BATCHES: 250,
-            REQUESTS_PER_BATCH: [20],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v11.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
             {
-                enabled: true,
+                enabled: false,
                 esaUrl: 'http://18.212.156.75:7778',
                 userName: 'apiClient',
                 password: 'cap*Cr0119',
@@ -816,7 +848,7 @@ const config =
             name: 'iAnswerVoiceTest',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=truee&displayExecutionLogs=false'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=truee&displayExecutionLogs=true&targetUserId=auth0|66a3c6cf38a49e5264f86ecb'
                 ],
             POLICY: 'batch',
             TIMEOUT: 100000,
@@ -826,7 +858,7 @@ const config =
                 ToState: "TX",
                 CallerCountry: "US",
                 Direction: "inbound",
-                SpeechResult: "Yes",
+                SpeechResult: "Make an appointment",
                 CallerState: "NJ",
                 Language: "en-US",
                 ToZip: "",
@@ -877,17 +909,166 @@ const config =
             name: 'cxfFlowDemo',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=false'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb'
                 ],
             POLICY: 'batch',
             TIMEOUT: 100000,
-            BEARER_TOKEN: '',
+            BEARER_TOKEN: '1234567890',
             INPUT: { year: 2002 },
             RESPONSE: { success: true, message: [ ".+" ] },
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './cxfFlowDemo-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_local_2_2: 
+        {
+            name: 'premier-voice',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true'
+                ],
+            POLICY: 'batch',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "Make an appointment",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc4",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "in-progress", // ringing or in-progress
+                From: "+19088757894",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+19088757894",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './premier-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_local_2_3: 
+        {
+            name: 'premier-sms',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true'
+                ],
+            POLICY: 'batch',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                "ToCountry": "US",
+                "ToState": "TX",
+                "SmsMessageSid": "SM2a98402f91ab13e35c30ff23a92886b4",
+                "NumMedia": "0",
+                "ToCity": "BASTROP",
+                "FromZip": "08560",
+                "SmsSid": "SM2a98402f91ab13e35c30ff23a92886b4",
+                "FromState": "NJ",
+                "SmsStatus": "received",
+                "FromCity": "UNION",
+                "Body": "Can I speak to someone",
+                "FromCountry": "US",
+                "To": "+15127725728",
+                "MessagingServiceSid": "MG55e7263d6375559dc51d16c21796729d",
+                "ToZip": "78602",
+                "NumSegments": "1",
+                "MessageSid": "SM2a98402f91ab13e35c30ff23a92886b4",
+                "AccountSid": "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                "From": "+19088757894",
+                "ApiVersion": "2010-04-01"
+            },
+            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './premier-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_local_2_4: 
+        {
+            name: 'premier-chat',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true'
+                ],
+            POLICY: 'batch',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                "sessionId": "12345",
+                "chatInput": "Hello!"
+            },
+            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './premier-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
             {

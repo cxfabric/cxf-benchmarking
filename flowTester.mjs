@@ -303,7 +303,7 @@ async function flowTester()
             { 
                 'Content-Type': 'application/json', 
                 'Accept': 'application/json',
-                'Authorization': activeConfig.BEARER_TOKEN
+                'Authorization': `Bearer ${activeConfig.BEARER_TOKEN}`
             },
             timeout: requestTimeout
         };
