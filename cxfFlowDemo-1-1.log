@@ -1,14 +1,14 @@
-[INFO] Flow test starting at 2026-04-21 09:04:31.366
+[INFO] Flow test starting at 2026-05-03 11:45:33.622
 [INFO] 
-[INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb
+[INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=2fd017c0-5100-46f7-ad0d-dd5f8c98f55b&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true
 [INFO]   Starting test 1/1
-[ERROR] 2026-04-21 09:04:31.524 Error in retrieving flow response: {"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/core/settle.js:19:12)\n    at IncomingMessage.handleStreamEnd (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/adapters/http.js:793:11)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1701:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)\n    at Axios.request (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/core/Axios.js:45:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async oneFlowTest (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:168:20)\n    at async Promise.all (index 0)\n    at async flowTestBatches (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:217:9)\n    at async flowTester (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:354:29)","config":{"transitional":{"silentJSONParsing":true,"forcedJSONParsing":true,"clarifyTimeoutError":false},"adapter":["xhr","http","fetch"],"transformRequest":[null],"transformResponse":[null],"timeout":100000,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN","maxContentLength":-1,"maxBodyLength":-1,"env":{},"headers":{"Accept":"application/json","Content-Type":"application/json","Authorization":"Bearer 1234567890","User-Agent":"axios/1.13.2","Content-Length":"84","Accept-Encoding":"gzip, compress, deflate, br"},"method":"post","url":"http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&displayExecutionLogs=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb","data":"{\"year\":2002,\"sessionId\":\"a2b555a1-d996-4558-8a46-1293325b754d\",\"label\":\"Request 1\"}","allowAbsoluteUrls":true},"code":"ERR_BAD_REQUEST","status":401}
+[INFO]   Response = {"success":"ok"} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=2fd017c0-5100-46f7-ad0d-dd5f8c98f55b&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true
 [INFO] Number of batches: 1
         Number of concurrent flow invocations: 1
         Total number of flow invocations: 1
         Number of successful flow invocations and executions: 0/1 (0%)
-        Number of successful flow invocations with failed executions: 0/1 (0%)
-        Number of unsuccessful flow invocations (not counted in the average flow execution time): 1/1 (100%)
-        Average roundtrip time to/from CXF flow = 0ms
-        Total execution time: 0.17 seconds
-[INFO] Flow test ended at Tue Apr 21 2026 09:04:31 GMT-0400 (Eastern Daylight Time)
+        Number of successful flow invocations with failed executions: 1/1 (100%)
+        Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
+        Average roundtrip time to/from CXF flow = 381ms
+        Total execution time: 0.397 seconds
+[INFO] Flow test ended at Sun May 03 2026 11:45:34 GMT-0400 (Eastern Daylight Time)

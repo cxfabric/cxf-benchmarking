@@ -252,6 +252,8 @@ async function flowTester()
         reportToEsa,
         outputFileName;
 
+    console.info(`Start time: ${new Date(Date.now())}`);
+
     if (ALL_CONFIGS?.configurations && typeof ALL_CONFIGS.configurations === 'object')
     {
         if (ALL_CONFIGS?.activeConfiguration)
