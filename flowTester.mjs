@@ -373,7 +373,7 @@ async function flowTester()
             }
         else console.error('REQUESTS_PER_BATCH must be an array with length > 0');
 
-        logStatement = `Flow test ended at ${new Date(Date.now()).toString()}`;
+        logStatement = `Flow test ended at ${new Date(NOW).toString()}`;
         logEvent(logStatement, 'info', fileDescriptor);
         if (fileDescriptor)
         {
