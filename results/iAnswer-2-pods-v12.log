@@ -1,14 +1,4 @@
-[INFO] Flow test starting at 2026-02-02 16:18:01.892
+[INFO] Flow test starting at 2026-05-24 13:48:17.178
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true
 [INFO]   Starting test 1/1
-[INFO]   Response = {"success":true,"message":["OK, let me help you with making that appointment.","We offer massages, manicures, pedicures, facials, nails, skin treatments, and vitamin treatments.","Which service would you like to book?"]} for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=b609db12-a1eb-4fd4-9f67-605b5a941ce3&draft=true
-[INFO] Number of batches: 1
-        Number of concurrent flow invocations: 1
-        Total number of flow invocations: 1
-        Number of successful flow invocations and executions: 0/1 (0%)
-        Number of successful flow invocations with failed executions: 1/1 (100%)
-        Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 1209ms
-        Total execution time: 2.215 seconds
-[INFO] Flow test ended at Mon Feb 02 2026 16:18:04 GMT-0500 (Eastern Standard Time)
