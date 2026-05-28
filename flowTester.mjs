@@ -62,47 +62,48 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj, 
 {
     let objKeys;
 
-    if (!expectedObj)
-        return 2;
-
-    if (typeof obj === 'object')
-        if (Array.isArray(obj))
-            if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index]) === 2 ), response)
-                return 2;
-            else return 1;        
-        else
-        {
-            objKeys = new Set(Object.keys(obj));
-            if (objKeys.isSupersetOf(new Set(Object.keys(expectedObj))))
-            {
-                for (const [ key, value ] of Object.entries(obj))
-                {
-                    if (matchesExpectedObject(flowUrl, fileDescriptor, `${path}.${key}`, value, expectedObj[key]) < 2, response)
-                        return 1;        
-                }
-                return 2;
-            }
+    if (expectedObj) {
+        if (typeof obj === 'object')
+            if (Array.isArray(obj))
+                if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index]) === 2 ), response)
+                    return 2;
+                else return 1;        
             else
             {
-                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${JSON.stringify(obj)}" does not contain all properties expected in "${JSON.stringify(expectedObj)}"`, 'warn', fileDescriptor);
+                objKeys = new Set(Object.keys(obj));
+                if (objKeys.isSupersetOf(new Set(Object.keys(expectedObj))))
+                {
+                    for (const [ key, value ] of Object.entries(obj))
+                    {
+                        if (matchesExpectedObject(flowUrl, fileDescriptor, path ? `${path}.${key}` : key, value, expectedObj[key]) < 2)
+                            return 1;        
+                    }
+                    return 2;
+                }
+                else
+                {
+                    logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${JSON.stringify(obj)}" does not contain all properties expected in "${JSON.stringify(expectedObj)}"`, 'warn', fileDescriptor);
+                    return 1;        
+                }
+            }
+        
+        if (typeof obj === 'string')
+            if (new RegExp(expectedObj).test(obj))
+                return 2;
+            else
+            {
+                logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not correspond to expected pattern "${expectedObj}"`, 'warn', fileDescriptor);
                 return 1;        
             }
-        }
-    
-    if (typeof obj === 'string')
-        if (new RegExp(expectedObj).test(obj))
+
+        if (obj === expectedObj)
             return 2;
-        else
-        {
-            logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not correspond to expected pattern "${expectedObj}"`, 'warn', fileDescriptor);
-            return 1;        
-        }
 
-    if (obj === expectedObj)
-        return 2;
+        logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not have expected value "${expectedObj}"`, 'warn', fileDescriptor);
+        return 1;
+    }     
 
-    logEvent(`  Flow invocation successful but flow execution error for flow ${flowUrl}: flow response ${JSON.stringify(response)} object properties path "${path}" value "${obj}" does not have expected value "${expectedObj}"`, 'warn', fileDescriptor);
-    return 1;     
+    return 2;
 }
 
 function processResponse(response, flowUrl, fileDescriptor) 

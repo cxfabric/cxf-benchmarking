@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_iAnswer_qa',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
+    activeConfiguration: 'config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
     configurations:
     {
         config1_0:
@@ -402,16 +402,16 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false', // 0
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=false', // 1
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=false', // 2
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true&displayExecutionLogs=false', // 3  
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true&displayExecutionLogs=false', // 4
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=216d9e15-429e-477c-bc6e-cda611ae3959&draft=true&displayExecutionLogs=false', // 5
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true&displayExecutionLogs=false', // 6
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true&displayExecutionLogs=false', // 7
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true&displayExecutionLogs=false', // 8
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true&displayExecutionLogs=false' // 9
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true&targetUserId=*', // 0
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=true&targetUserId=*', // 1
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=true&targetUserId=*', // 2
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true&displayExecutionLogs=true&targetUserId=*', // 3  
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true&displayExecutionLogs=true&targetUserId=*', // 4
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=216d9e15-429e-477c-bc6e-cda611ae3959&draft=true&displayExecutionLogs=true&targetUserId=*', // 5
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true&displayExecutionLogs=true&targetUserId=*', // 6
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true&displayExecutionLogs=true&targetUserId=*', // 7
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true&displayExecutionLogs=true&targetUserId=*', // 8
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true&displayExecutionLogs=true&targetUserId=*' // 9
                 ],
             POLICY: 'alternate',
             TIMEOUT: 100000,
@@ -447,7 +447,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 250,
+            NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -578,7 +578,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 12,
+            NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -705,7 +705,7 @@ const config =
             name: 'grok-start-appointment',
             FLOW_REST_URLS:
                 [
-                    'https://cxf-executor-qa.cxfabric.io/restendpoint?tenant_id=4ffb65f3-29a2-4082-9862-33ff79292a85&flow_id=5bff1b48-b0c4-48fe-92a5-d0c69b8db949&draft=true&targetUserId=auth0_6a03408b8245d3ff4f94ba89&displayExecutionLogs=true&calcomAction=getUserSchedules' 
+                    'https://cxf-executor-qa.cxfabric.io/restendpoint?tenant_id=4ffb65f3-29a2-4082-9862-33ff79292a85&flow_id=5bff1b48-b0c4-48fe-92a5-d0c69b8db949&draft=true&targetUserId=auth0_6a03408b8245d3ff4f94ba89&displayExecutionLogs=false&calcomAction=transcription' 
                 ],
             POLICY: 'alternate',
             TIMEOUT: 180000,
@@ -738,12 +738,75 @@ const config =
                 FromCity: "UNION",
                 CalledState: "TX",
                 FromZip: "08560",
-                FromState: "NJ"
+                FromState: "NJ",
+                message: "This is a transcript"
             },
-            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            RESPONSE: { message: [ "Transcription stored" ] },
             NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_iAnswer_dev_local:
+        {
+            name: 'grok-start-appointment',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8354abf2-ee06-425c-849a-ddc59b3f3497&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true&calcomAction=transcription' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "Hello",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "in-progress",
+                From: "+16468758014",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+16468758014",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ",
+                message: "This is a transcript"
+            },
+            RESPONSE: { message: "Transcription stored" },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 50,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
