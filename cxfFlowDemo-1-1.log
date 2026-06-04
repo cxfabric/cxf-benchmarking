@@ -1,14 +1,15 @@
-[INFO] Flow test starting at 2026-05-27 19:47:34.419
+[INFO] Flow test starting at 2026-06-03 10:11:55.741
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true
 [INFO]   Starting test 1/1
 [INFO]   Response = {"success":true,"message":"Hello from C X Fabric!"} for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true
+[WARN] 2026-06-03 10:12:15.198   Flow invocation successful but flow execution error for flow http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true: flow response undefined object properties path "message" value "Hello from C X Fabric!" does not correspond to expected pattern "Tuesday"
 [INFO] Number of batches: 1
         Number of concurrent flow invocations: 1
         Total number of flow invocations: 1
         Number of successful flow invocations and executions: 0/1 (0%)
         Number of successful flow invocations with failed executions: 1/1 (100%)
         Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 3575ms
-        Total execution time: 3.589 seconds
-[INFO] Flow test ended at Wed May 27 2026 19:47:34 GMT-0400 (Eastern Daylight Time)
+        Average roundtrip time to/from CXF flow = 19455ms
+        Total execution time: 19.469 seconds
+[INFO] Flow test ended at Wed Jun 03 2026 10:11:55 GMT-0400 (Eastern Daylight Time)

@@ -1,30 +1,6 @@
-[INFO] Load test starting at 2025-08-22 13:27:49.647
+[INFO] Flow test starting at 2026-06-01 15:46:24.301
 [INFO] 
 [INFO] Starting batch 1/10 with 2 concurrent request(s)
 [INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
 [INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
-[INFO]   Flow invocation and execution successful
-[INFO]   Flow invocation and execution successful
-[INFO] 
-[INFO] Starting batch 2/10 with 2 concurrent request(s)
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
-[INFO]   Flow invocation and execution successful
-[INFO]   Flow invocation and execution successful
-[INFO] 
-[INFO] Starting batch 3/10 with 2 concurrent request(s)
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
-[INFO]   Flow invocation and execution successful
-[INFO]   Flow invocation and execution successful
-[INFO] 
-[INFO] Starting batch 4/10 with 2 concurrent request(s)
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
-[INFO]   Flow invocation and execution successful
-[INFO]   Flow invocation and execution successful
-[INFO] 
-[INFO] Starting batch 5/10 with 2 concurrent request(s)
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true
-[INFO]   Starting test 1/2 with flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8be60669-ba1f-4135-85fd-aff271713201&draft=true
-[INFO]   Flow invocation and execution successful
+[ERROR] 2026-06-01 15:46:25.742 Error in retrieving flow response: {"message":"Request failed with status code 403","name":"AxiosError","stack":"AxiosError: Request failed with status code 403\n    at settle (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/core/settle.js:19:12)\n    at IncomingMessage.handleStreamEnd (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/adapters/http.js:793:11)\n    at IncomingMessage.emit (node:events:520:35)\n    at endReadableNT (node:internal/streams/readable:1701:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)\n    at Axios.request (file:///home/rklemm/software/cxf/cxf-benchmarking/node_modules/axios/lib/core/Axios.js:45:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async oneFlowTest (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:169:20)\n    at async Promise.all (index 0)\n    at async flowTestBatches (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:218:9)\n    at async flowTester (file:///home/rklemm/software/cxf/cxf-benchmarking/flowTester.mjs:371:25)","config":{"transitional":{"silentJSONParsing":true,"forcedJSONParsing":true,"clarifyTimeoutError":false},"adapter":["xhr","http","fetch"],"transformRequest":[null],"transformResponse":[null],"timeout":60000,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN","maxContentLength":-1,"maxBodyLength":-1,"env":{},"headers":{"Accept":"application/json","Content-Type":"application/json","User-Agent":"axios/1.13.2","Content-Length":"115","Accept-Encoding":"gzip, compress, deflate, br"},"method":"post","url":"https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true","data":"{\"chatInput\":\"I want to make a reservation\",\"sessionId\":\"f61d0144-3470-402f-9a1b-54f7c268847d\",\"label\":\"Request 1\"}","allowAbsoluteUrls":true},"code":"ERR_BAD_REQUEST","status":403}

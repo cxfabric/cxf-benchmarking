@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
+    activeConfiguration: 'outageSmsAlertDev',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
     configurations:
     {
         config1_0:
@@ -377,7 +377,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 250,
+            NUM_BATCHES: 10,
             REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -447,7 +447,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 10,
+            NUM_BATCHES: 250,
             REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -542,7 +542,68 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true&targetUserId=*'
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "Make a reservation",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "in-progress",
+                From: "+19088757894",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+19088757894",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config1_9_remote:
+        {
+            name: 'iAnswer',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=true&targetUserId=*'
                 ],
             POLICY: 'alternate',
             TIMEOUT: 100000,
@@ -806,6 +867,68 @@ const config =
             RESPONSE: { message: "Transcription stored" },
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 50,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_iAnswer_dev:
+        {
+            name: 'grok-start-appointment',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=8354abf2-ee06-425c-849a-ddc59b3f3497&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true&calcomAction=transcription' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "Hello",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "in-progress",
+                From: "+16468758014",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+16468758014",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ",
+                message: "This is a transcript"
+            },
+            RESPONSE: { message: "Transcription stored" },
+            NUM_BATCHES: 25,
+            REQUESTS_PER_BATCH: [100],
             WAIT_TIME_MS_BETWEEN_BATCHES: 50,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -1396,6 +1519,108 @@ const config =
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 100,
             OUTPUT_FILE_NAME: './results/iAnswer-2-pods-v13.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        outageSmsAlertLocal:
+        {
+            name: 'Outage SMS Alert',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=2df96443-68ac-40fd-94db-98e9c05b7d4a&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                stationId: "1006"
+            },
+            RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
+            NUM_BATCHES: 2,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        outageSmsAlertDev:
+        {
+            name: 'Outage SMS Alert',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=2df96443-68ac-40fd-94db-98e9c05b7d4a&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                stationId: "1006"
+            },
+            RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
+            NUM_BATCHES: 2,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        outageSmsAlertQA:
+        {
+            name: 'Outage SMS Alert',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-qa.cxfabric.io/restendpoint?tenant_id=1bdd5282-6602-4a6b-8ad6-a94f57c5fa2b&flow_id=82edfe2b-3bec-4a23-9bd9-df7fc86a5f1c&draft=true&targetUserId=auth0_6a18569785de408b276a9c51&displayExecutionLogs=true' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                stationId: "1006"
+            },
+            RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
+            NUM_BATCHES: 2,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
             {
