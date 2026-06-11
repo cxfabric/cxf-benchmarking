@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'outageSmsAlertDev',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
+    activeConfiguration: 'config1_9_local',//'outageSmsAlertQA',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
     configurations:
     {
         config1_0:
@@ -578,7 +578,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 1,
+            NUM_BATCHES: 30,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -639,8 +639,8 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 1,
-            REQUESTS_PER_BATCH: [1],
+            NUM_BATCHES: 10,
+            REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -742,7 +742,7 @@ const config =
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
             NUM_BATCHES: 100,
-            REQUESTS_PER_BATCH: [25],
+            REQUESTS_PER_BATCH: [100],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -1569,6 +1569,40 @@ const config =
             },
             VERBOSITY: 'high'
         },
+        outageSmsAlertLocal2:
+        {
+            name: 'Outage SMS Alert',
+            FLOW_REST_URLS:
+                [
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1e628905-879e-44ff-9f15-707071c27947&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                stationId: "1006"
+            },
+            RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
         outageSmsAlertDev:
         {
             name: 'Outage SMS Alert',
@@ -1583,7 +1617,41 @@ const config =
                 stationId: "1006"
             },
             RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
-            NUM_BATCHES: 2,
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        outageSmsAlertDev2:
+        {
+            name: 'Outage SMS Alert',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1e628905-879e-44ff-9f15-707071c27947&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                stationId: "1006"
+            },
+            RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
+            NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -1618,7 +1686,7 @@ const config =
             },
             RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
             NUM_BATCHES: 2,
-            REQUESTS_PER_BATCH: [1],
+            REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
