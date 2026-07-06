@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config1_9_local',//'outageSmsAlertQA',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
+    activeConfiguration: 'config_remote_2_1',//'outageSmsAlertQA',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
     configurations:
     {
         config1_0:
@@ -578,7 +578,7 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 30,
+            NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
@@ -741,8 +741,78 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 100,
-            REQUESTS_PER_BATCH: [100],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config1_11_remote:
+        {
+            name: 'iAnswer-smb-main',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=23867c25-8064-48e6-b127-8cecc444f012&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=6b22a06e-cbe7-4b36-b090-f74de767c5bf&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=09da5e8e-9d48-412d-bae3-bdbe9ac964cc&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c38a54a8-6abd-4d15-84f6-f0832286f21f&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c4c999fa-c070-45bd-a9cc-75a688c16c15&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=1abd9657-0cc4-48e8-9603-44a211d03ef2&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=b6944aa0-c89d-4c51-b905-ba43914a582b&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=ab000027-cf89-47cc-b1d5-75ca249340ed&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false' 
+                ],
+            POLICY: 'alternate',
+            TIMEOUT: 180000,
+            BEARER_TOKEN: '',
+            INPUT: {
+                Called: "+17372143833",
+                ToState: "TX",
+                CallerCountry: "US",
+                Direction: "inbound",
+                SpeechResult: "",
+                CallerState: "NJ",
+                Language: "en-US",
+                ToZip: "",
+                Confidence: "0.8278828",
+                CallSid: "CAf1a9a81367f2a0e04a22bd1c3e1e3cc3",
+                To: "+17372143833",
+                CallerZip: "08560",
+                ToCountry: "US",
+                CalledZip: "",
+                ApiVersion: "2010-04-01",
+                CalledCity: "",
+                CallStatus: "ringing",
+                From: "+16468758014",
+                AccountSid: "ACea51d0d625f3ae0b56590c0a6bf2d9a5",
+                CalledCountry: "US",
+                CallerCity: "UNION",
+                ToCity: "",
+                FromCountry: "US",
+                Caller: "+16468758014",
+                FromCity: "UNION",
+                CalledState: "TX",
+                FromZip: "08560",
+                FromState: "NJ"
+            },
+            RESPONSE: { success: true, message: [ "<?xml>.+" ] },
+            NUM_BATCHES: 250,
+            REQUESTS_PER_BATCH: [10],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -927,8 +997,8 @@ const config =
                 message: "This is a transcript"
             },
             RESPONSE: { message: "Transcription stored" },
-            NUM_BATCHES: 25,
-            REQUESTS_PER_BATCH: [100],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 50,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -1010,8 +1080,8 @@ const config =
             BEARER_TOKEN: '',
             INPUT: { chatInput: 'Hello, there!' },
             RESPONSE: { success: true, message: [ "This is .+ response" ] },
-            NUM_BATCHES: 100,
-            REQUESTS_PER_BATCH: [250],
+            NUM_BATCHES: 250,
+            REQUESTS_PER_BATCH: [1000],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/simple-flow-local-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -1296,7 +1366,40 @@ const config =
             name: 'cxfFlowDemo',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true'
+                    //'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=auth0_66a3c6cf38a49e5264f86ecb&displayExecutionLogs=true'
+                    'http://localhost:4001/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true'
+                ],
+            POLICY: 'batch',
+            TIMEOUT: 100000,
+            BEARER_TOKEN: '1234567890',
+            INPUT: { year: 2002 },
+            RESPONSE: { success: true, message: [ "Tuesday" ] },
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
+            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
+            OUTPUT_FILE_NAME: './cxfFlowDemo-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            FILE_OVERWRITE: true,
+            REPORT_TO_ESA:
+            {
+                enabled: false,
+                esaUrl: 'http://18.212.156.75:7778',
+                userName: 'apiClient',
+                password: 'cap*Cr0119',
+                analysisId: 'flowPerformance',
+                entityId: 'iAnswer-integration',
+                initialEvent: { step: "clear" },
+                launchEvent: { step: 'start' },
+                postEvent: { step: 'end' },
+                showResponse: true
+            },
+            VERBOSITY: 'high'
+        },
+        config_remote_2_1: 
+        {
+            name: 'cxfFlowDemo',
+            FLOW_REST_URLS:
+                [
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true'
                 ],
             POLICY: 'batch',
             TIMEOUT: 100000,
@@ -1682,11 +1785,12 @@ const config =
             TIMEOUT: 180000,
             BEARER_TOKEN: '',
             INPUT: {
-                stationId: "1006"
+                stationId: "1005",
+                phoneNUmber: "+16468758014"
             },
             RESPONSE: { flow_response: "Outage report submitted. The SMS workflow is running..+" },
-            NUM_BATCHES: 2,
-            REQUESTS_PER_BATCH: [10],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 1000,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,

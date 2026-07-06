@@ -65,7 +65,7 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj, 
     if (expectedObj) {
         if (typeof obj === 'object')
             if (Array.isArray(obj))
-                if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index]) === 2 ), response)
+                if (obj.every((element, index) => matchesExpectedObject(flowUrl, fileDescriptor, `${path}[${index}]`, element, expectedObj[index], response) === 2 ))
                     return 2;
                 else return 1;        
             else
@@ -75,7 +75,7 @@ function matchesExpectedObject(flowUrl, fileDescriptor, path, obj, expectedObj, 
                 {
                     for (const [ key, value ] of Object.entries(obj))
                     {
-                        if (matchesExpectedObject(flowUrl, fileDescriptor, path ? `${path}.${key}` : key, value, expectedObj[key]) < 2)
+                        if (matchesExpectedObject(flowUrl, fileDescriptor, path ? `${path}.${key}` : key, value, expectedObj[key], response) < 2)
                             return 1;        
                     }
                     return 2;
@@ -111,7 +111,7 @@ function processResponse(response, flowUrl, fileDescriptor)
     if (response.status === 200)
     {
         if (verbosity === 'high')
-            logEvent(`  Response = ${JSON.stringify(response.data)} for flow ${flowUrl}`, 'info', fileDescriptor);
+            logEvent(`  Response = ${JSON.stringify(response?.data)} for flow ${flowUrl}`, 'info', fileDescriptor);
         if (response.data)
             return matchesExpectedObject(flowUrl, fileDescriptor, '', response.data, activeConfig.RESPONSE, response.data);
         else 

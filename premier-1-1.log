@@ -1,14 +1,15 @@
-[INFO] Flow test starting at 2026-04-18 11:10:43.741
+[INFO] Flow test starting at 2026-07-02 12:35:56.405
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s) to http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true
 [INFO]   Starting test 1/1
-[INFO]   Response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n                    <Response>\n                        \n                        <Say language=\"en-US\" voice=\"Google.en-US-Neural2-H\" loop=\"1\">OK, let me help you with making that appointment.,,,,</Say><Say language=\"en-US\" voice=\"Google.en-US-Neural2-H\" loop=\"1\">We offer massages, manicures, pedicures, facials, nails, skin treatments, and vitamin treatments.,,,,</Say>\n                        <Gather input=\"speech\" language=\"en-US\" method=\"POST\" speechTimeout=\"2\" timeout=\"3\" actionOnEmptyResult=\"true\" speechModel=\"googlev2_telephony_short\">\n                            <Say language=\"en-US\" voice=\"Google.en-US-Neural2-H\" loop=\"1\">Which service would you like to book?</Say>\n                        </Gather>\n                        <Say>Hello, are you still there?</Say>\n                    </Response>" for flow http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true
+[INFO]   Response = {} for flow http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true
+[WARN] 2026-07-02 12:36:02.665   Flow invocation successful but flow execution error for flow http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=7782db80-1453-4a98-988f-8339acabdd48&draft=true&targetUserId=auth0|699c7c03f25b436ab82e71a6&displayExecutionLogs=true: flow response {} object properties path "" value "{}" does not contain all properties expected in "{"success":true,"message":["<?xml>.+"]}"
 [INFO] Number of batches: 1
         Number of concurrent flow invocations: 1
         Total number of flow invocations: 1
-        Number of successful flow invocations and executions: 1/1 (100%)
-        Number of successful flow invocations with failed executions: 0/1 (0%)
+        Number of successful flow invocations and executions: 0/1 (0%)
+        Number of successful flow invocations with failed executions: 1/1 (100%)
         Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 1881ms
-        Total execution time: 1.899 seconds
-[INFO] Flow test ended at Sat Apr 18 2026 11:10:45 GMT-0400 (Eastern Daylight Time)
+        Average roundtrip time to/from CXF flow = 6246ms
+        Total execution time: 6.274 seconds
+[INFO] Flow test ended at Thu Jul 02 2026 12:35:56 GMT-0400 (Eastern Daylight Time)
