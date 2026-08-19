@@ -1,15 +1,15 @@
-[INFO] Flow test starting at 2026-07-06 18:14:02.439
+[INFO] Flow test starting at 2026-07-08 08:45:34.952
 [INFO] 
 [INFO] Starting batch 1/1 with 1 concurrent request(s) to https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true
 [INFO]   Starting test 1/1
 [INFO]   Response = {"success":true,"message":"Hello from C X Fabric!"} for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true
-[WARN] 2026-07-06 18:14:22.952   Flow invocation successful but flow execution error for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true: flow response {"success":true,"message":"Hello from C X Fabric!"} object properties path "message" value "Hello from C X Fabric!" does not correspond to expected pattern "Tuesday"
+[WARN] 2026-07-08 08:45:54.550   Flow invocation successful but flow execution error for flow https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=e65852cd-3fc1-40d7-898a-d1ec37bfae59&draft=true&targetUserId=*&displayExecutionLogs=true: flow response {"success":true,"message":"Hello from C X Fabric!"} object properties path "message" value "Hello from C X Fabric!" does not correspond to expected pattern "config_remote_2_1"
 [INFO] Number of batches: 1
         Number of concurrent flow invocations: 1
         Total number of flow invocations: 1
         Number of successful flow invocations and executions: 0/1 (0%)
         Number of successful flow invocations with failed executions: 1/1 (100%)
         Number of unsuccessful flow invocations (not counted in the average flow execution time): 0/1 (0%)
-        Average roundtrip time to/from CXF flow = 20511ms
-        Total execution time: 20.524 seconds
-[INFO] Flow test ended at Mon Jul 06 2026 18:14:02 GMT-0400 (Eastern Daylight Time)
+        Average roundtrip time to/from CXF flow = 19597ms
+        Total execution time: 19.611 seconds
+[INFO] Flow test ended at Wed Jul 08 2026 08:45:34 GMT-0400 (Eastern Daylight Time)

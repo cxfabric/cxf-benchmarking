@@ -1,6 +1,6 @@
 const config =
 {
-    activeConfiguration: 'config_remote_2_1',//'outageSmsAlertQA',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
+    activeConfiguration: 'config1_9_local',//'outageSmsAlertQA',//'config1_11_local',//'config_iAnswer_dev','config_iAnswer_dev_local',//config_iAnswer_qa',// 'config1_11_local',//'config_local_2_5',//'config_local_2_5',config1_8_local,//'config1_9_local',//'config_simple_local_1','config_local_2_5',config_local_2_1,
     configurations:
     {
         config1_0:
@@ -472,16 +472,16 @@ const config =
             name: 'iAnswer',
             FLOW_REST_URLS:
                 [
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false', // 0
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=false', // 1
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=false', // 2
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true&displayExecutionLogs=false', // 3  
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true&displayExecutionLogs=false', // 4
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=216d9e15-429e-477c-bc6e-cda611ae3959&draft=true&displayExecutionLogs=false', // 5
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true&displayExecutionLogs=false', // 6
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true&displayExecutionLogs=false', // 7
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true&displayExecutionLogs=false', // 8
-                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true&displayExecutionLogs=false' // 9
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=1d7fff51-a17e-450e-a9b6-135c565f905a&draft=true&displayExecutionLogs=false&targetUserId=*', // 0
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=03b6dbf3-db8a-4e56-b8e2-97a3a02855ae&draft=true&displayExecutionLogs=false&targetUserId=*', // 1
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=524bba21-2249-4493-9fb1-3395f4e59a94&draft=true&displayExecutionLogs=false&targetUserId=*', // 2
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=622cbaec-0b4a-452d-b6e2-9fec1bd807f8&draft=true&displayExecutionLogs=false&targetUserId=*', // 3  
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=c1f3f380-6a17-49ed-a994-9e44c61e0047&draft=true&displayExecutionLogs=false&targetUserId=*', // 4
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=216d9e15-429e-477c-bc6e-cda611ae3959&draft=true&displayExecutionLogs=false&targetUserId=*', // 5
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=eacb0ccc-eff1-4ac9-9b5d-92cbee6a8347&draft=true&displayExecutionLogs=false&targetUserId=*', // 6
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=748b9838-de75-4132-a6d1-72ae6a90ac14&draft=true&displayExecutionLogs=false&targetUserId=*', // 7
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=9684e514-e4cb-4def-a683-384aecba7b22&draft=true&displayExecutionLogs=false&targetUserId=*', // 8
+                    'https://cxf-executor-dev.cxfabric.io/restendpoint?tenant_id=cus_QZ2vTHtqYrOmud&flow_id=6daf0ae2-f560-48d8-aa03-8d50e4104981&draft=true&displayExecutionLogs=false&targetUserId=*' // 9
                 ],
             POLICY: 'alternate',
             TIMEOUT: 100000,
@@ -517,8 +517,8 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 25,
-            REQUESTS_PER_BATCH: [10],
+            NUM_BATCHES: 1,
+            REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
@@ -537,7 +537,7 @@ const config =
             },
             VERBOSITY: 'none'
         },
-        config1_9_local:
+    config1_9_local:
         {
             name: 'iAnswer',
             FLOW_REST_URLS:
@@ -696,16 +696,16 @@ const config =
             name: 'iAnswer-smb-main',
             FLOW_REST_URLS:
                 [
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=23867c25-8064-48e6-b127-8cecc444f012&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=6b22a06e-cbe7-4b36-b090-f74de767c5bf&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=09da5e8e-9d48-412d-bae3-bdbe9ac964cc&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c38a54a8-6abd-4d15-84f6-f0832286f21f&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c4c999fa-c070-45bd-a9cc-75a688c16c15&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=1abd9657-0cc4-48e8-9603-44a211d03ef2&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=b6944aa0-c89d-4c51-b905-ba43914a582b&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false',
-                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=ab000027-cf89-47cc-b1d5-75ca249340ed&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=false' 
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=23867c25-8064-48e6-b127-8cecc444f012&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=6b22a06e-cbe7-4b36-b090-f74de767c5bf&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=09da5e8e-9d48-412d-bae3-bdbe9ac964cc&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c38a54a8-6abd-4d15-84f6-f0832286f21f&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=c4c999fa-c070-45bd-a9cc-75a688c16c15&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=3c96eb9c-edb0-43e4-a292-fdfbc6a41d17&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=1abd9657-0cc4-48e8-9603-44a211d03ef2&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=b6944aa0-c89d-4c51-b905-ba43914a582b&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true',
+                    'http://localhost:4001/restendpoint?tenant_id=52a01a03-4611-492f-ad3d-8c0e8c429d55&flow_id=ab000027-cf89-47cc-b1d5-75ca249340ed&draft=true&targetUserId=auth0_699c7c03f25b436ab82e71a6&displayExecutionLogs=true' 
                 ],
             POLICY: 'alternate',
             TIMEOUT: 180000,
@@ -741,10 +741,10 @@ const config =
                 FromState: "NJ"
             },
             RESPONSE: { success: true, message: [ "<?xml>.+" ] },
-            NUM_BATCHES: 1,
+            NUM_BATCHES: 2,
             REQUESTS_PER_BATCH: [1],
-            WAIT_TIME_MS_BETWEEN_BATCHES: 10,
-            OUTPUT_FILE_NAME: './results/before-per-pod-cache-optimization-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
+            WAIT_TIME_MS_BETWEEN_BATCHES: 5,
+            OUTPUT_FILE_NAME: './results/iAnswer-smb-main-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
             REPORT_TO_ESA:
             {
@@ -759,7 +759,7 @@ const config =
                 postEvent: { step: 'end' },
                 showResponse: true
             },
-            VERBOSITY: 'high'
+            VERBOSITY: 'none'
         },
         config1_11_remote:
         {
@@ -1373,7 +1373,7 @@ const config =
             TIMEOUT: 100000,
             BEARER_TOKEN: '1234567890',
             INPUT: { year: 2002 },
-            RESPONSE: { success: true, message: [ "Tuesday" ] },
+            RESPONSE: { success: true, message: [ "Hello from C X Fabric!" ] },
             NUM_BATCHES: 1,
             REQUESTS_PER_BATCH: [1],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
@@ -1405,9 +1405,9 @@ const config =
             TIMEOUT: 100000,
             BEARER_TOKEN: '1234567890',
             INPUT: { year: 2002 },
-            RESPONSE: { success: true, message: [ "Tuesday" ] },
-            NUM_BATCHES: 1,
-            REQUESTS_PER_BATCH: [1],
+            RESPONSE: { success: true, message: [ "Hello from C X Fabric!" ] },
+            NUM_BATCHES: 2,
+            REQUESTS_PER_BATCH: [2],
             WAIT_TIME_MS_BETWEEN_BATCHES: 10,
             OUTPUT_FILE_NAME: './cxfFlowDemo-_@numBatches@_-_@minNumRequestsPerBatch@_.log',
             FILE_OVERWRITE: true,
